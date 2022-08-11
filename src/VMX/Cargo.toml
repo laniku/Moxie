@@ -1,0 +1,23 @@
+[package]
+name = "VMX"
+version = "1.0.0"
+edition = "2018"
+
+[lib]
+path = "src/lib.rs"
+crate-type = ["staticlib"]
+
+[features]
+default = ["custom_print_thread_id","AuthenticAMD"]
+debug_level_v = []
+debug_level_vv = []
+debug_level_vvv = []
+disable_color = []
+release_mode = []
+AuthenticAMD = []
+GenuineIntel = []
+custom_print_thread_id = []
+
+[dependencies]
+bsl = { path = "/home/laniku/working/bsl", features = ["custom_print_thread_id","AuthenticAMD"] }
+syscall = { path = "/home/laniku/working/hypervisor/syscall", features = ["custom_print_thread_id","AuthenticAMD"] }
